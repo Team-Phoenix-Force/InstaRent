@@ -70,7 +70,7 @@ const Login = () => {
   };
   return (
     <div className="bg-[#f9fafb] flex gap-8 flex-col justify-center items-center min-h-screen min-w-screen">
-      <div className="text-3xl font-semibold">Welcome to Rent360</div>
+      <div className="text-3xl font-semibold">Welcome to InstaRent</div>
       <div className="p-8 bg-slate-100 shadow-md rounded-md flex flex-col items-center">
         <form
           method="post"

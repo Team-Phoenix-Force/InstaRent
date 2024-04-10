@@ -191,7 +191,7 @@ const Home = () => {
           <div className="about-text flex flex-col gap-4 w-2/3">
             <span className="text-custom_primary font-medium">ABOUT US</span>
             <p className="text-left">
-              At Rent360, we believe in transforming the way people access and
+              At InstaRent, we believe in transforming the way people access and
               experience products. Our platform serves as a dynamic hub for
               renting a vast array of items, from cutting-edge electronics to
               stylish furniture and beyond. With a commitment to simplicity and
@@ -200,13 +200,13 @@ const Home = () => {
               without the burden of ownership.
             </p>
             <p className="text-left">
-              Built on the principles of sustainability and community, Rent360
+              Built on the principles of sustainability and community, InstaRent
               promotes a sharing economy, reducing waste and promoting
               responsible consumption. Our user-friendly interface ensures a
               seamless browsing and renting experience, while our dedicated
               customer support team is always ready to assist. Whether you're
               looking to upgrade your tech, furnish your space, or simply try
-              before you buy, Rent360 is your trusted partner in unlocking a
+              before you buy, InstaRent is your trusted partner in unlocking a
               world of possibilities through hassle-free rentals. Join us in
               redefining ownership and embracing a more sustainable, accessible
               future.

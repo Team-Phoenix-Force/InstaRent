@@ -1,6 +1,6 @@
-# Rent360
+# InstaRent
 
-Rent360 is a web platform that facilitates renting items, allowing users to both list items for rent and rent items from others. The platform enables users to create listings, manage their inventory, view available items for rent, add items to a wishlist, and more.
+InstaRent is a web platform that facilitates renting items, allowing users to both list items for rent and rent items from others. The platform enables users to create listings, manage their inventory, view available items for rent, add items to a wishlist, and more.
 
 # Features
 
@@ -23,12 +23,12 @@ Other Tools: Axios for HTTP requests, JSON Web Tokens for authentication, etc.
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/yourusername/Rent360.git
+git clone https://github.com/yourusername/InstaRent.git
 Install dependencies for both frontend and backend:
 
 bash
 Copy code
-cd Rent360/frontend
+cd InstaRent/frontend
 npm install
 cd ../backend
 npm install
@@ -42,7 +42,7 @@ Backend: cd backend && npm start
 Open your browser and access http://localhost:3000 to view the website.
 
 Contributing
-Contributions are welcome! If you want to contribute to Rent360, please follow these steps:
+Contributions are welcome! If you want to contribute to InstaRent, please follow these steps:
 
 Fork the repository.
 Create a new branch (git checkout -b feature/your-feature).
