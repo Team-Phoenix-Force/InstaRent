@@ -1,33 +1,29 @@
+require('dotenv').config();
 const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose');
+const messageRoutes=require('./routes/messages');
+const usersRoutes=require('./routes/users');
+const wishlistRoutes=require('./routes/wishlist');
+const productRoutes=require('./routes/product');
 const Product = require('./models/product.model'); 
 let Wishlist=require('./models/wishlist.model');
 
+const port=process.env.PORT || 7000;
+const uri=process.env.ATLAS_URI;
 
-require('dotenv').config();
 const app=express();
-const port=process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri=process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true });
 const connection=mongoose.connection;
 connection.once('open',()=>{
     console.log("MongoDB database connection established successfully");
+    app.listen(port,()=>{
+        console.log(`Server is running on port:${port}`);
+    });
 });
-
-
-
-
-
-
-const messageRouter=require('./routes/messages');
-const usersRouter=require('./routes/users');
-const wishlistRouter=require('./routes/wishlist');
-const productRouter=require('./routes/product');
-
 
 app.post("/showWishlist", async (req, res) => {
     try {
@@ -48,14 +44,8 @@ app.post("/showWishlist", async (req, res) => {
 });
 
 
+app.use('/messages',messageRoutes);
+app.use('/users',usersRoutes);
+app.use('/wishlist',wishlistRoutes);
+app.use('/product',productRoutes);
 
-
-
-app.use('/messages',messageRouter);
-app.use('/users',usersRouter);
-app.use('/wishlist',wishlistRouter);
-app.use('/product',productRouter);
-
-app.listen(port,()=>{
-    console.log(`Server is running on port:${port}`);
-})

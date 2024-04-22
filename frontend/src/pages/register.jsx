@@ -28,7 +28,7 @@ const Register = () => {
     if (handleValidation()) {
       const { userid, name, password, email, phone } = formval;
 
-      const response = await axios.post("http://localhost:7000/register", {
+      const response = await axios.post("http://localhost:7000/users/register", {
         userid,
         name,
         phone,
