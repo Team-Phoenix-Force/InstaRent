@@ -36,15 +36,18 @@ const SellForm = () => {
     } = product;
     const userid = localStorage.getItem("userid");
 
-    const response = await axios.post("http://localhost:7000/addProduct", {
-      title,
-      description,
-      price,
-      address,
-      seller_mobile_number,
-      product_image_url,
-      userid,
-    });
+    const response = await axios.post(
+      "http://localhost:7000/product/addProduct",
+      {
+        title,
+        description,
+        price,
+        address,
+        seller_mobile_number,
+        product_image_url,
+        userid,
+      },
+    );
 
     const data = response.data;
     console.log("1");

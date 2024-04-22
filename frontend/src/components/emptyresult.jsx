@@ -1,4 +1,3 @@
-
 "use client";
 import { Empty } from "keep-react";
 
@@ -17,4 +16,4 @@ export const EmptyComponent = (props) => {
       }
     />
   );
-}
+};

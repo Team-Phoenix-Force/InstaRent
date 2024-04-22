@@ -13,7 +13,7 @@ export const Wishlist = () => {
       try {
         const response = await axios.post(
           "http://localhost:7000/showWishlist",
-          { userid }
+          { userid },
         );
         console.log(response.data);
         if (response.data) {

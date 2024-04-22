@@ -24,7 +24,7 @@ export const Chat = () => {
     const lowerCaseSellerId = sellerId.toLowerCase();
 
     const sortedStrings = [lowerCaseName, lowerCaseSellerId].sort((a, b) =>
-      a.localeCompare(b)
+      a.localeCompare(b),
     );
 
     return sortedStrings.join("");
@@ -61,7 +61,7 @@ export const Chat = () => {
     (data) => {
       setMessageList((list) => [...list, data]);
     },
-    [setMessageList]
+    [setMessageList],
   );
 
   useEffect(() => {

@@ -28,13 +28,16 @@ const Register = () => {
     if (handleValidation()) {
       const { userid, name, password, email, phone } = formval;
 
-      const response = await axios.post("http://localhost:7000/users/register", {
-        userid,
-        name,
-        phone,
-        password,
-        email,
-      });
+      const response = await axios.post(
+        "http://localhost:7000/users/register",
+        {
+          userid,
+          name,
+          phone,
+          password,
+          email,
+        },
+      );
 
       const data = response.data;
 
@@ -73,7 +76,7 @@ const Register = () => {
     if (phone.length < 10) {
       toast.error(
         "Phone number must be at least 10 digits long!",
-        toastOptions
+        toastOptions,
       );
       return false;
     }

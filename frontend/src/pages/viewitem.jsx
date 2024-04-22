@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 function View() {
   const [Itemstatus, setItemStatus] = useState("Available");
   const [wishStatus, setWishStatus] = useState("ADD TO WISHLIST");
-  const [sellerid, setSellerid] = useState('')
+  const [sellerid, setSellerid] = useState("");
 
   const { id } = useParams();
 
@@ -46,10 +46,13 @@ function View() {
   const userid = localStorage.getItem("userid");
 
   const handleWish = async () => {
-    const response = await axios.post("http://localhost:7000/addWish", {
-      userid,
-      id,
-    });
+    const response = await axios.post(
+      "http://localhost:7000/wishlist/addWish",
+      {
+        userid,
+        id,
+      },
+    );
     console.log(response.data.status);
     console.log("above");
     if (response.data.status === true) {
@@ -62,10 +65,13 @@ function View() {
 
   useEffect(() => {
     const wishChecker = async () => {
-      const response = await axios.post("http://localhost:7000/checkWish", {
-        userid,
-        id,
-      });
+      const response = await axios.post(
+        "http://localhost:7000/wishlist/checkWish",
+        {
+          userid,
+          id,
+        },
+      );
       if (response.data.status === true) {
         setWishStatus("ALREADY IN WISHLIST");
       }
@@ -74,11 +80,9 @@ function View() {
   }, [userid, id]);
   const navigate = useNavigate();
   const handleChat = () => {
-    if(sellerid)
-      navigate(`/chat/${sellerid}`)
-    else
-      navigate('/chat/ramesh123')
-  }
+    if (sellerid) navigate(`/chat/${sellerid}`);
+    else navigate("/chat/ramesh123");
+  };
 
   return (
     <div>
@@ -87,7 +91,12 @@ function View() {
         <div className="flex flex-col md:flex-row justify-around h-400">
           <div className="left-section flex flex-col w-full md:w-2/3 my-16">
             <div className="img px-24 mx-16 bg-black border h-[30rem] pt-12">
-              {products && <img className="w-full h-full object-cover" src={products.product_image_url} />}
+              {products && (
+                <img
+                  className="w-full h-full object-cover"
+                  src={products.product_image_url}
+                />
+              )}
             </div>
             <div className="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[55rem] ">
               <div className="text-4xl text-bold text-gray-900 m-2">
@@ -134,7 +143,10 @@ function View() {
               <p className="text-gray-900 font-bold py-2 mx-4 align-left">
                 {products && <p>{products.userid}</p>}
               </p>
-              <button onClick={handleChat} className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl">
+              <button
+                onClick={handleChat}
+                className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl"
+              >
                 <Chat size={32} color="#5AE4A8" weight="bold" />
                 <p>CHAT WITH SELLER</p>
               </button>

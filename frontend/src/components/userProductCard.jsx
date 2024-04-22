@@ -20,10 +20,13 @@ export const ProductCard = (props) => {
   const userid = localStorage.getItem("userid");
 
   const handleWish = async () => {
-    const response = await axios.post("http://localhost:7000/addWish", {
-      userid,
-      id,
-    });
+    const response = await axios.post(
+      "http://localhost:7000/wishlist/addWish",
+      {
+        userid,
+        id,
+      },
+    );
     console.log(response.data.status);
     console.log("above");
     if (response.data.status === true) {
@@ -37,10 +40,13 @@ export const ProductCard = (props) => {
 
   useEffect(() => {
     const wishChecker = async () => {
-      const response = await axios.post("http://localhost:7000/checkWish", {
-        userid,
-        id,
-      });
+      const response = await axios.post(
+        "http://localhost:7000/wishlist/checkWish",
+        {
+          userid,
+          id,
+        },
+      );
       if (response.data.status === true) {
         setWishStatus(true);
       }

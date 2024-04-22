@@ -16,14 +16,13 @@ const books = [
   { id: 10, name: "Brave New World" },
 ];
 
-
 export const SearchBarComponent = () => {
   const [data, setData] = useState([]);
 
   const handleOnChange = (event) => {
     const searchTerm = event.target.value.toLowerCase();
     const results = books.filter((book) =>
-      book.name.toLowerCase().includes(searchTerm)
+      book.name.toLowerCase().includes(searchTerm),
     );
 
     if (searchTerm === "") {

@@ -1,4 +1,3 @@
-
 "use client";
 import { useState } from "react";
 import { Upload } from "keep-react";
@@ -19,4 +18,4 @@ export const UploadComponent = () => {
       id="upload"
     />
   );
-}
+};

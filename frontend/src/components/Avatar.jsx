@@ -3,27 +3,27 @@
 import { Avatar, Popover } from "keep-react";
 import { User, Heart, SignOut, Gear, Question } from "phosphor-react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const PopoverContent = () => {
-
   const navigate = useNavigate();
 
   const handleLogout = () => {
-  axios.get('http://localhost:7000/logout')
-    .then(res => {
-      if (res.data.status === true) {
-        console.log("Logout successful");
-        navigate('/login');
-      } else {
-        alert("Logout failed");
-      }
-    })
-    .catch(err => {
-      console.error("Logout error:", err);
-      alert("Logout failed. Please try again.");
-    });
+    axios
+      .get("http://localhost:7000/users/logout")
+      .then((res) => {
+        if (res.data.status === true) {
+          console.log("Logout successful");
+          navigate("/login");
+        } else {
+          alert("Logout failed");
+        }
+      })
+      .catch((err) => {
+        console.error("Logout error:", err);
+        alert("Logout failed. Please try again.");
+      });
   };
   const userid = localStorage.getItem("userid");
 
@@ -56,9 +56,8 @@ const PopoverContent = () => {
 
 export const AvatarComponent = ({ avatar }) => {
   return (
-    
     <Popover additinalContent={<PopoverContent />} customClass="shadow-md">
-      <Avatar shape="rounded" img={avatar} size="md"/>
+      <Avatar shape="rounded" img={avatar} size="md" />
     </Popover>
   );
 };

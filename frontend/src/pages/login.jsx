@@ -32,7 +32,7 @@ const Login = () => {
     axios.defaults.withCredentials = true;
 
     if (handleValidation()) {
-      const { data } = await axios.post("http://localhost:7000/login", {
+      const { data } = await axios.post("http://localhost:7000/users/login", {
         userid,
         password,
       });
@@ -111,7 +111,7 @@ const Login = () => {
               Forgot Password?
             </div>
             <div>
-              <span className=" text-gray-700 mr-2">Didn't sign up?</span>
+              <span className=" text-gray-700 mr-2">Did not sign up?</span>
               <a
                 href="/register"
                 className=" text-custom_primary font-semibold cursor-pointer"

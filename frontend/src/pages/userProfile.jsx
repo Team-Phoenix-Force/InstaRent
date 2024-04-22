@@ -14,8 +14,8 @@ const userProfile = () => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:7000/showMyProducts",
-          { userid }
+          "http://localhost:7000/product/showMyProducts",
+          { userid },
         );
         console.log(response.data);
         if (response.data) {
@@ -42,7 +42,6 @@ const userProfile = () => {
       <div className="mx-40 my-20 flex  items-start gap-4">
         <ProfileCard />
         <div className="display_box flex  flex-wrap gap-16 justify-center w-full mt-10">
-          
           {products.length > 0 ? (
             products.map((product) => (
               <ProductCard

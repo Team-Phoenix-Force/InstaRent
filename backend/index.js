@@ -1,51 +1,52 @@
-require('dotenv').config();
-const express=require('express');
-const cors=require('cors');
-const mongoose=require('mongoose');
-const messageRoutes=require('./routes/messages');
-const usersRoutes=require('./routes/users');
-const wishlistRoutes=require('./routes/wishlist');
-const productRoutes=require('./routes/product');
-const Product = require('./models/product.model'); 
-let Wishlist=require('./models/wishlist.model');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const messageRoutes = require("./routes/messages");
+const usersRoutes = require("./routes/users");
+const wishlistRoutes = require("./routes/wishlist");
+const productRoutes = require("./routes/product");
+const Product = require("./models/product.model");
+let Wishlist = require("./models/wishlist.model");
 
-const port=process.env.PORT || 7000;
-const uri=process.env.ATLAS_URI;
+const port = process.env.PORT || 7000;
+const uri = process.env.ATLAS_URI;
 
-const app=express();
+const app = express();
 app.use(cors());
 app.use(express.json());
 
 mongoose.connect(uri, { useNewUrlParser: true });
-const connection=mongoose.connection;
-connection.once('open',()=>{
-    console.log("MongoDB database connection established successfully");
-    app.listen(port,()=>{
-        console.log(`Server is running on port:${port}`);
-    });
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully");
+  app.listen(port, () => {
+    console.log(`Server is running on port:${port}`);
+  });
 });
 
 app.post("/showWishlist", async (req, res) => {
-    try {
-        const userId = req.body.userid;
-        const wishlistItems = await Wishlist.find({ userid: userId });
+  try {
+    const userId = req.body.userid;
+    const wishlistItems = await Wishlist.find({ userid: userId });
 
-        if (wishlistItems.length > 0) {
-            const productIds = wishlistItems.map(item => item.id);
-            const products = await Product.find({ _id: { $in: productIds } });
-            return res.json(products);
-        } else {
-            return res.json([]);
-        }
-    } catch (error) {
-        console.error(error);
-        return res.json({ message: "Error getting wishlist items. Try later", status: false });
+    if (wishlistItems.length > 0) {
+      const productIds = wishlistItems.map((item) => item.id);
+      const products = await Product.find({ _id: { $in: productIds } });
+      return res.json(products);
+    } else {
+      return res.json([]);
     }
+  } catch (error) {
+    console.error(error);
+    return res.json({
+      message: "Error getting wishlist items. Try later",
+      status: false,
+    });
+  }
 });
 
-
-app.use('/messages',messageRoutes);
-app.use('/users',usersRoutes);
-app.use('/wishlist',wishlistRoutes);
-app.use('/product',productRoutes);
-
+app.use("/messages", messageRoutes);
+app.use("/users", usersRoutes);
+app.use("/wishlist", wishlistRoutes);
+app.use("/product", productRoutes);

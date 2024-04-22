@@ -7,17 +7,18 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const FilteredProducts = () => {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const { category } = useParams();
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:7000/filteredproducts", {category});
+        const response = await axios.post(
+          "http://localhost:7000/product/filteredproducts",
+          { category },
+        );
         console.log(response.data);
-        if (
-          response.data
-        ) {
+        if (response.data) {
           setProducts(response.data);
         } else {
           console.log("No products found in the response.");
@@ -31,7 +32,7 @@ const FilteredProducts = () => {
   }, []);
 
   useEffect(() => {
-    if (products.length>0 ) {
+    if (products.length > 0) {
       console.log(products);
     }
   }, [products]);
@@ -46,7 +47,7 @@ const FilteredProducts = () => {
       <div className="services-container flex justify-center items-center gap-16 flex-wrap">
         {products.length > 0 ? (
           products.map((product) => (
-              <ProductCard
+            <ProductCard
               key2={category}
               key={product.id}
               id={product.id}
