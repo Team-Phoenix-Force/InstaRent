@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="text-md font-medium  text-gray-900 uppercase">
-              RENT-360
+              INSTARENT
             </div>
             <p className="max-w-xs mt-4 text-sm text-gray-600">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
@@ -198,7 +198,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p className="mt-8 text-xs text-gray-800">© 2023 RENT-360</p>
+        <p className="mt-8 text-xs text-gray-800">© 2024 INSTARENT</p>
       </div>
     </footer>
   );
