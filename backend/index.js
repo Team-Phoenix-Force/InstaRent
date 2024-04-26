@@ -11,9 +11,13 @@ let Wishlist = require("./models/wishlist.model");
 
 const port = process.env.PORT || 7000;
 const uri = process.env.ATLAS_URI;
+const corsOptions = {
+  origin: "http://localhost:5173", // to allow requests from client at port 5173
+  credentials: true, // to allow cookies from client
+};
 
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose.connect(uri, { useNewUrlParser: true });

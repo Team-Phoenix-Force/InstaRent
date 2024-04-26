@@ -32,12 +32,19 @@ const Login = () => {
     axios.defaults.withCredentials = true;
 
     if (handleValidation()) {
-      const { data } = await axios.post("http://localhost:7000/users/login", {
-        userid,
-        password,
-      });
+      const { data } = await axios.post(
+        "http://localhost:7000/users/login",
+        {
+          userid,
+          password,
+        },
+        {
+          withCredentials: true,
+        },
+      );
 
       if (data.status === true) {
+        localStorage.setItem("loginstatus", "true");
         toast.success(data.message, toastOptions);
         setAuth(true);
         setName(data.name);

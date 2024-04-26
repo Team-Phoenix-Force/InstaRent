@@ -19,10 +19,11 @@ const verifyUser = (req, res, next) => {
     });
   }
 };
-router.get("/", verifyUser, async (req, res) => {
+
+router.post("/", verifyUser, async (req, res) => {
   try {
     // Assuming req.userid is the user's ID after authentication
-    const user = await User.findById(req.userid);
+    const user = await User.findById(req.body.userid);
     if (!user) {
       return res.json({ message: "User not found", status: false });
     }
@@ -55,6 +56,7 @@ router.post("/register", async (req, res) => {
       email: req.body.email,
       password: hashedPassword,
       phone: req.body.phone,
+      userid: req.body.userid,
     });
 
     const savedUser = await newUser.save();
@@ -84,6 +86,7 @@ router.post("/login", async (req, res) => {
       req.body.password,
       user.password,
     );
+
     if (!passwordMatch) {
       return res.json({ message: "Bad credentials", status: false });
     }
