@@ -16,14 +16,17 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
+
   const handleClick = () => {
     navigate("products");
   };
-  function getRandomInt(max) {
+
+  const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
   }
 
-  function selectFourNumbers(val) {
+  const selectFourNumbers = (val) => {
     const selectedNumbers = new Set();
 
     while (selectedNumbers.size < 8) {
@@ -34,18 +37,18 @@ const Home = () => {
     return Array.from(selectedNumbers);
   }
 
-  const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:7000/products", {});
+        const response = await axios.get("http://localhost:7000/products");
 
         if (
           response.data &&
           Array.isArray(response.data) &&
           response.data.length > 0
         ) {
-          const fourNumbers = selectFourNumbers(17);
+          console.log(response.data);
+          const fourNumbers = selectFourNumbers(11);
           setProducts([
             response.data[fourNumbers[0]],
             response.data[fourNumbers[1]],
@@ -160,8 +163,8 @@ const Home = () => {
             {products.length > 0 ? (
               products.map((product) => (
                 <ProductCard
-                  key={product.id}
-                  id={product.id}
+                  key={product._idid}
+                  id={product._id}
                   img={product.product_image_url}
                   price={`Rs ${product.price}`}
                   title={product.title}

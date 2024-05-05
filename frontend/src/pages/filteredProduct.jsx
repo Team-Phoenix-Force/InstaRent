@@ -14,9 +14,12 @@ const FilteredProducts = () => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:7000/product/filteredproducts",
+          "http://localhost:7000/products/filteredproducts",
           { category },
         );
+        // const response = await axios.get(
+        //   "http://localhost:7000/products"
+        // )
         console.log(response.data);
         if (response.data) {
           setProducts(response.data);
