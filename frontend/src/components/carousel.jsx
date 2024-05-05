@@ -9,10 +9,10 @@ export const CarouselComponent = () => {
   return (
     <div className="h-56 w-full sm:h-64 xl:h-96 2xl:h-96">
       <Carousel slideInterval={5000} showControls={true} indicators={true}>
-        <img src={i1} alt="slider-1" height={400} width={910} />
-        <img src={i2} alt="slider-2" height={400} width={910} />
-        <img src={i3} alt="slider-3" height={400} width={910} />
-        <img src={i4} alt="slider-4" height={400} width={910} />
+        <img src={i1} alt="slider-1" height={400} width={850} />
+        <img src={i2} alt="slider-2" height={400} width={850} />
+        <img src={i3} alt="slider-3" height={400} width={850} />
+        <img src={i4} alt="slider-4" height={400} width={850} />
       </Carousel>
     </div>
   );
