@@ -146,7 +146,7 @@ function View() {
 								</p>
 								<span>
 									<Badge size="sm" colorType="light" color="gray">
-										26 Oct
+										{product.city}
 									</Badge>
 								</span>
 							</div>
