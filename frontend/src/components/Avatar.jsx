@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 "use client";
 import { Avatar, Popover } from "keep-react";
-import { User, Heart, SignOut, Gear, Question } from "phosphor-react";
+import { User, Chat,Heart, SignOut, Gear, Question } from "phosphor-react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -34,7 +34,7 @@ const PopoverContent = () => {
         <Link to={`/profile/${userid}`}>View Profile</Link>
       </div>
       <div className="flex gap-4 hover:outline rounded-md hover:outline-custom_primary hover:outline-2 py-2 text-textcolor font-medium">
-        <Heart size={20} fontWeight="bold" />
+        <Chat size={20} fontWeight="bold" />
         <Link to={`/chatlist/${userid}`}>Chats</Link>
       </div>
       <div className="flex gap-4 hover:outline rounded-md hover:outline-custom_primary hover:outline-2 py-2 text-textcolor font-medium">

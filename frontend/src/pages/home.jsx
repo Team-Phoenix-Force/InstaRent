@@ -123,24 +123,22 @@ const Home = () => {
             <MapPin size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Choose A Location</div>
             <p className="text-center mx-5 w-2/3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
-              delectus sequi provident, inventore animi?
+            Discover your dream getaway with our wide selection 
+            of vacation rentals for all purposes general.
             </p>
           </div>
           <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <Calendar size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Pick-Up Date</div>
             <p className="text-center mx-5 w-2/3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
-              delectus sequi provident, inventore animi?
+            Find the perfect time to start your adventure with our diverse range of rental options.
             </p>
           </div>
           <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <Package size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Rent An Item</div>
             <p className="text-center mx-5 w-2/3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
-              delectus sequi provident, inventore animi?
+              Rent An Item: Explore our inventory and elevate your experience with ease and convenience.
             </p>
           </div>
         </div>
@@ -158,7 +156,7 @@ const Home = () => {
             Explore Our Top Deals
           </div>
         </div>
-        <div className="services-container flex justify-center items-center gap-16 flex-wrap">
+        <div className="services-container flex justify-center items-center gap-16 flex-wrap" style={{ boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.1)" }}>
           <div className="services-container flex justify-center items-center gap-16 flex-wrap">
             {products.length > 0 ? (
               products.map((product) => (
@@ -176,6 +174,7 @@ const Home = () => {
             )}
           </div>
         </div>
+
       </section>
 
       <section
