@@ -55,6 +55,7 @@ const FilteredProducts = () => {
 							id={product.id}
 							img={product.product_image_url}
 							price={product.price}
+							per={product.per}
 							title={product.title}
 						/>
 					))

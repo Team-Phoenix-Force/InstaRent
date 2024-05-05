@@ -47,6 +47,7 @@ const Login = () => {
         localStorage.setItem("loginstatus", "true");
         localStorage.setItem("userid", data.userid);
         localStorage.setItem("city", data.city);
+        localStorage.setItem("name", data.name);
 
         toast.success(data.message, toastOptions);
         setAuth(true);
@@ -130,23 +131,7 @@ const Login = () => {
               </a>
             </div>
           </div>
-          <div className="flex justify-center items-center gap-4">
-            <hr className=" w-28 "></hr>
-            <span className="text-gray-700 font-medium mb-1.5">
-              continue with
-            </span>
-            <hr className=" w-28"></hr>
-          </div>
 
-          <div>
-            <button
-              type="submit"
-              className="w-full mt-4 bg-custom_primary text-white font-medium rounded-md outline-2 py-1.5 hover:bg-gray-700 flex justify-center items-center gap-2"
-            >
-              <img src={google} alt="google-icon" className="w-6" />
-              <span>Login With Google</span>
-            </button>
-          </div>
         </form>
       </div>
       <Toaster position="top-center" />
