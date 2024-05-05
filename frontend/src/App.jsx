@@ -28,7 +28,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/search/:category" element={<FilteredProducts />} />
+        <Route path="/search/:searchedText" element={<FilteredProducts />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
         <Route path="/chat/:sellerid" element={<Chat />} />
         <Route path="/chatlist/:userid" element={<ChatList />} />

@@ -8,14 +8,15 @@ import { useEffect, useState } from "react";
 
 const FilteredProducts = () => {
 	const [products, setProducts] = useState([]);
-	const { category } = useParams();
+	const { searchedText } = useParams();
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
+        console.log("searchedText", searchedText);
 				const response = await axios.post(
 					"http://localhost:7000/products/filteredproducts",
-					{ category }
+					{ searchedText }
 				);
 				// const response = await axios.get(
 				//   "http://localhost:7000/products"
@@ -24,7 +25,7 @@ const FilteredProducts = () => {
 				if (response.data) {
 					setProducts(response.data);
 				} else {
-					console.log("No products found in the response.");
+					console.log("No products found in the response");
 				}
 			} catch (error) {
 				console.error("Error:", error);
