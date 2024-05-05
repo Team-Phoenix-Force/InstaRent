@@ -1,0 +1,17 @@
+:root {
+  --tw-main-color: #474fa0;
+  --tw-second-color: #ffac38;
+  --tw-text-color: #444;
+  --tw-gradient: linear-gradient(#474fa0, #7d82bb);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+  list-style: none;
+  text-decoration: none;
+}
