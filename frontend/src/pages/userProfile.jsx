@@ -14,7 +14,7 @@ const UserProfile = () => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.post(
-					"http://localhost:7000/products/showMyProducts",
+					"http://localhost:3000/products/showMyProducts",
 					{ userid }
 				);
 				console.log(response.data);

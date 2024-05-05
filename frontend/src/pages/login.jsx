@@ -33,7 +33,7 @@ const Login = () => {
 
     if (handleValidation()) {
       const { data } = await axios.post(
-        "http://localhost:7000/users/login",
+        "http://localhost:3000/users/login",
         {
           userid,
           password,

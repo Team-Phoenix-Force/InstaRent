@@ -13,7 +13,7 @@ export const Wishlist = () => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.post(
-					"http://localhost:7000/showWishlist",
+					"http://localhost:3000/showWishlist",
 					{ userid }
 				);
 				console.log(response.data);

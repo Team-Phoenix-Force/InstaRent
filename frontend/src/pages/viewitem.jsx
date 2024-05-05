@@ -20,7 +20,7 @@ function View() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.post("http://localhost:7000/products/product", {
+				const response = await axios.post("http://localhost:3000/products/product", {
 					id,
 				});
 				console.log(response.data);
@@ -52,7 +52,7 @@ function View() {
 	useEffect(() => {
 		const wishChecker = async () => {
 			const response = await axios.post(
-				"http://localhost:7000/wishlist/checkWish",
+				"http://localhost:3000/wishlist/checkWish",
 				{
 					userid,
 					id,
@@ -72,7 +72,7 @@ function View() {
 			navigate("/wishlist");
 		}
 		const response = await axios.post(
-			"http://localhost:7000/wishlist/addWish",
+			"http://localhost:3000/wishlist/addWish",
 			{
 				userid,
 				id,

@@ -46,7 +46,7 @@ const SellForm = () => {
     } = product;
     const userid = localStorage.getItem("userid");
 
-    const response = await axios.post("http://localhost:5000/addProduct", {
+    const response = await axios.post("http://localhost:3000/addProduct", {
       title,
       description,
       price,
@@ -89,13 +89,15 @@ const SellForm = () => {
 
   
   const paymentHandler=async (e)=>{
+
+    
 console.log(`selected option is ${selectedOption}`);
     const amount=selectedOption*100;
     console.log(`selected option is ${amount}`);
     const currency="INR";
     const receiptId="abcde";
     
-      const response=await fetch("http://localhost:5000/order",{
+      const response=await fetch("http://localhost:3000/order",{
           method:"POST",
           body:JSON.stringify({
               amount,currency,receipt:receiptId
@@ -271,7 +273,7 @@ console.log(`selected option is ${selectedOption}`);
           value="49"
           onChange={() => handleOptionChange(49)}
         />
-        <label htmlFor="post_for_1_week" className="text-sm text-gray-700">Post for 1 week</label>
+        <label htmlFor="post_for_1_week" className="text-sm text-gray-700">Post for 1 week - Platform fees <b> Rs 49.00 </b></label>
       </div>
       <div className="flex items-center mt-2">
         <input
@@ -282,7 +284,7 @@ console.log(`selected option is ${selectedOption}`);
           value="179"
           onChange={() => handleOptionChange(179)}
         />
-        <label htmlFor="post_for_1_month" className="text-sm text-gray-700">Post for 1 month</label>
+        <label htmlFor="post_for_1_month" className="text-sm text-gray-700">Post for 1 month - Platform fees <b> Rs 179.00</b></label>
       </div>
       <div className="flex items-center mt-2">
         <input
@@ -293,7 +295,7 @@ console.log(`selected option is ${selectedOption}`);
           value="1999"
           onChange={() => handleOptionChange(1999)}
         />
-        <label htmlFor="post_for_1_year" className="text-sm text-gray-700">Post for 1 year</label>
+        <label htmlFor="post_for_1_year" className="text-sm text-gray-700">Post for 1 year - Platform fees<b> Rs 1999.00 </b></label>
       </div>
     </div>
   

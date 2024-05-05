@@ -49,7 +49,7 @@ const Navbar = () => {
   // useEffect(() => {
   // 	axios
   // 		.post(
-  // 			"http://localhost:7000/users",
+  // 			"http://localhost:3000/users",
   // 			{ userid: userid },
   // 			{ withCredentials: true }
   // 		)

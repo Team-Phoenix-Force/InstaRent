@@ -11,7 +11,7 @@ const PopoverContent = () => {
 
   const handleLogout = () => {
     axios
-      .get("http://localhost:7000/users/logout")
+      .get("http://localhost:3000/users/logout")
       .then((res) => {
         if (res.data.status === true) {
           console.log("Logout successful");

@@ -20,7 +20,7 @@ const WishlistCard = ({id, img, price, per, title, remove}) => {
 
   const handleWish = async () => {
     const response = await axios.post(
-      "http://localhost:7000/wishlist/addWish",
+      "http://localhost:3000/wishlist/addWish",
       {
         userid,
         id,
@@ -42,7 +42,7 @@ const WishlistCard = ({id, img, price, per, title, remove}) => {
   useEffect(() => {
     const wishChecker = async () => {
       const response = await axios.post(
-        "http://localhost:7000/wishlist/checkWish",
+        "http://localhost:3000/wishlist/checkWish",
         {
           userid,
           id,

@@ -30,7 +30,7 @@ const Register = () => {
 			const { userid, name, password, email, phone, city } = formval;
 
 			const response = await axios.post(
-				"http://localhost:7000/users/register",
+				"http://localhost:3000/users/register",
 				{
 					userid,
 					name,
