@@ -140,7 +140,7 @@ function View() {
                 </span>
               </div>
             </div>
-            <div className="ownerdetail h-60 border border-gray-100 flex flex-col justify-center items-center gap-4 mr-4 bg-white rounded-md mt-4">
+            <div className="ownerdetail h-50 border border-gray-100 flex flex-col justify-center items-center gap-4 mr-4 bg-white rounded-md mt-3">
               <p className="text-gray-900 font-bold py-2 mx-4 align-left">
                 {products && <p>{products.userid}</p>}
               </p>
