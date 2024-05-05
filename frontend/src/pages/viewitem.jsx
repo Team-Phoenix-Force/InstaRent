@@ -39,7 +39,7 @@ function View() {
     // Now you can safely use products here
     if (products) {
       console.log(products);
-      setSellerid(products.sellerid);
+      setSellerid(products.userid);
     }
   }, [products]);
 
@@ -79,9 +79,10 @@ function View() {
     wishChecker();
   }, [userid, id]);
   const navigate = useNavigate();
+
   const handleChat = () => {
-    if (sellerid) navigate(`/chat/${sellerid}`);
-    else navigate("/chat/ramesh123");
+    if (sellerid) navigate(`/chat/${userid}/${sellerid}`);
+    
   };
 
   return (
@@ -98,8 +99,8 @@ function View() {
                 />
               )}
             </div>
-            <div class="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[55rem] ">
-          <div class="text-4xl text-bold text-gray-900 m-2">
+            <div class="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[48rem]"> 
+            <div class="text-4xl font-bold text-gray-900 m-2">
                 Description
               </div>
 
