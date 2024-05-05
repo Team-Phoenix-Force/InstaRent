@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-const ProductCard = ({id, img, price, per, title}) => {
+const WishlistCard = ({id, img, price, per, title, remove}) => {
   const navigate = useNavigate();
   const priceText = `Rs ${price} / ${per}`;
   const [wishStatus, setWishStatus] = useState(false);
@@ -34,6 +34,7 @@ const ProductCard = ({id, img, price, per, title}) => {
       setWishStatus(true);
     } else {
       console.log("false");
+      remove(id);
       setWishStatus(false);
     }
   };
@@ -97,4 +98,4 @@ const ProductCard = ({id, img, price, per, title}) => {
   );
 };
 
-export default ProductCard;
+export default WishlistCard;

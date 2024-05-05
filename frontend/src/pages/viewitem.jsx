@@ -49,24 +49,6 @@ function View() {
 
 	const userid = localStorage.getItem("userid");
 
-	const handleWish = async () => {
-		const response = await axios.post(
-			"http://localhost:7000/wishlist/addWish",
-			{
-				userid,
-				id,
-			}
-		);
-		console.log(response.data.status);
-		console.log("above");
-		if (response.data.status === true) {
-			console.log("added");
-			setWishStatus("ADDED TO WISHLIST");
-		} else {
-			setWishStatus("ADD TO WISHLIST");
-		}
-	};
-
 	useEffect(() => {
 		const wishChecker = async () => {
 			const response = await axios.post(
@@ -77,11 +59,37 @@ function View() {
 				}
 			);
 			if (response.data.status === true) {
-				setWishStatus("ALREADY IN WISHLIST");
+				setWishStatus("CHECK WISHLIST");
+			} else {
+				setWishStatus("ADD TO WISHLIST");
 			}
 		};
 		wishChecker();
 	}, [userid, id]);
+
+	const handleWish = async () => {
+		if(wishStatus === "CHECK WISHLIST"){
+			navigate("/wishlist");
+		}
+		const response = await axios.post(
+			"http://localhost:7000/wishlist/addWish",
+			{
+				userid,
+				id,
+				page: "product",
+			}
+		);
+		console.log(response.data.status);
+		console.log("above");
+		if (response.data.status === true) {
+			console.log("added");
+			setWishStatus("CHECK WISHLIST");
+		} else {
+			setWishStatus("ADD TO WISHLIST");
+		}
+	};
+
+
 	const navigate = useNavigate();
 
 	const handleChat = () => {
