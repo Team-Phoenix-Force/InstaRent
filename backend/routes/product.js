@@ -72,12 +72,15 @@ const addProduct = async (req, res) => {
 		const newProduct = new Product({
 			title: req.body.title,
 			description: req.body.description,
-			price: parseFloat(req.body.price),
+			price: req.body.price,
+			per: req.body.per,
 			seller_mobile_number: req.body.seller_mobile_number,
 			product_image_url: req.body.product_image_url,
 			address: req.body.address,
 			userid: req.body.userid,
 		});
+
+		console.log("DEBUG: ", newProduct);
 
 		const savedProduct = await newProduct.save();
 		console.log(savedProduct);

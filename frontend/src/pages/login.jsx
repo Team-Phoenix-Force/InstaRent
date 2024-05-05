@@ -45,6 +45,7 @@ const Login = () => {
 
       if (data.status === true) {
         localStorage.setItem("loginstatus", "true");
+        localStorage.setItem("userid", data.userid);
         toast.success(data.message, toastOptions);
         setAuth(true);
         setName(data.name);

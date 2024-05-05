@@ -12,6 +12,7 @@ const SellForm = () => {
     title: "",
     description: "",
     price: "",
+    per: "day",
     address: "",
     seller_mobile_number: "",
     product_image_url: "",
@@ -34,14 +35,17 @@ const SellForm = () => {
       seller_mobile_number,
       product_image_url,
     } = product;
-    const userid = localStorage.getItem("userid");
+    const per = product.per.toLowerCase();
+    console.log("per", per);
+    const userid = localStorage.getItem("userid").toString();
 
     const response = await axios.post(
-      "http://localhost:7000/product/addProduct",
+      "http://localhost:7000/products/addProduct",
       {
         title,
         description,
         price,
+        per,
         address,
         seller_mobile_number,
         product_image_url,
@@ -54,7 +58,7 @@ const SellForm = () => {
 
     if (data.status === false) {
       console.log("2");
-      toast.error(data.message, toastOptions);
+      // toast.error(data.message, toastOptions);
     }
 
     if (data.status === true) {
@@ -64,6 +68,7 @@ const SellForm = () => {
       setTimeout(() => navigate("/"), 1000);
     }
     console.log("Form submitted:", product);
+    console.log("userid", userid);
   };
 
   return (
@@ -139,6 +144,27 @@ const SellForm = () => {
               value={product.price}
               onChange={handleChange}
             />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="per"
+            >
+              per
+            </label>
+            <select
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
+              id="per"
+              type="text"
+              name="per"
+              value={product.per}
+              onChange={handleChange}
+            >
+              <option value="day">day</option>
+              <option value="week">week</option>
+              <option value="month">month</option>
+            </select>
           </div>
 
           <div className="mb-4">
