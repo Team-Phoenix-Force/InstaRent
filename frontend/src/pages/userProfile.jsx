@@ -49,7 +49,8 @@ const UserProfile = () => {
 								key={product.id}
 								id={product.id}
 								img={product.product_image_url}
-								price={`Rs ${product.price}`}
+								price={product.price}
+								per={product.per}
 								title={product.title}
 							/>
 						))
