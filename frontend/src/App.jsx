@@ -12,6 +12,7 @@ import { Login } from "./pages/login.jsx";
 import { Register } from "./pages/register.jsx";
 import FilteredProducts from "./pages/filteredProduct.jsx";
 import { Chat } from "./pages/chat.jsx";
+import ChatList from "./pages/chatlist.jsx";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Route path="/search/:category" element={<FilteredProducts />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
         <Route path="/chat/:sellerid" element={<Chat />} />
+        <Route path="/chatlist/:userid" element={<ChatList />} />
+
       </Routes>
     </BrowserRouter>
   );
