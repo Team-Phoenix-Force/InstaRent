@@ -74,7 +74,7 @@ const addProduct = async (req, res) => {
 			description: req.body.description,
 			price: req.body.price,
 			per: req.body.per,
-			seller_mobile_number: req.body.seller_mobile_number,
+			seller_mobile_number: parseInt(req.body.seller_mobile_number),
 			product_image_url: req.body.product_image_url,
 			address: req.body.address,
 			userid: req.body.userid,
