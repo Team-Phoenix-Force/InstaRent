@@ -59,6 +59,7 @@ router.post("/register", async (req, res) => {
       phone: req.body.phone,
       role: role,
       userid: req.body.userid,
+      city: req.body.city,
     });
 
     const savedUser = await newUser.save();
@@ -105,6 +106,7 @@ router.post("/login", async (req, res) => {
       status: true,
       name: user.name,
       userid: user.userid,
+      city: user.city
     });
   } catch (error) {
     console.error(error);

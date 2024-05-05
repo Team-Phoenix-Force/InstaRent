@@ -9,6 +9,7 @@ const userSchema = new Schema(
 		phone: { type: String, required: true },
 		userid: { type: String, required: true },
 		role: { type: String, required: true },
+		city: { type: String, required: true },
 	},
 	{
 		timestamps: true,

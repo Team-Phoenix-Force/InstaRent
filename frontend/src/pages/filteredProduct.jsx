@@ -13,14 +13,13 @@ const FilteredProducts = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-        console.log("searchedText", searchedText);
+				const userCity = localStorage.getItem("city");
+				console.log("searchedText", searchedText);
+        console.log("city", userCity);
 				const response = await axios.post(
 					"http://localhost:7000/products/filteredproducts",
-					{ searchedText }
+					{ searchedText, userCity }
 				);
-				// const response = await axios.get(
-				//   "http://localhost:7000/products"
-				// )
 				console.log(response.data);
 				if (response.data) {
 					setProducts(response.data);
@@ -52,11 +51,10 @@ const FilteredProducts = () => {
 				{products.length > 0 ? (
 					products.map((product) => (
 						<ProductCard
-							key2={category}
 							key={product.id}
 							id={product.id}
 							img={product.product_image_url}
-							price={`Rs ${product.price}`}
+							price={product.price}
 							title={product.title}
 						/>
 					))

@@ -32,7 +32,6 @@ function App() {
         <Route path="/profile/:userid" element={<UserProfile />} />
         <Route path="/chat/:sellerid" element={<Chat />} />
         <Route path="/chatlist/:userid" element={<ChatList />} />
-
       </Routes>
     </BrowserRouter>
   );

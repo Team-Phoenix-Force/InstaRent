@@ -76,7 +76,7 @@ const addProduct = async (req, res) => {
 			per: req.body.per,
 			seller_mobile_number: parseInt(req.body.seller_mobile_number),
 			product_image_url: req.body.product_image_url,
-			address: req.body.address,
+			city: req.body.city,
 			userid: req.body.userid,
 		});
 

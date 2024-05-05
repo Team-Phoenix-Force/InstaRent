@@ -9,7 +9,7 @@ const ProductSchema = new Schema(
 		per: { type: String, required: true },
 		seller_mobile_number: { type: Number, required: true },
 		product_image_url: { type: String, required: true },
-		address: { type: String, required: true },
+		city: { type: String, required: true },
 		userid: { type: String, required: true },
 	},
 	{

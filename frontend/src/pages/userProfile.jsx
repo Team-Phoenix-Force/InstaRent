@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "../components/productCard.jsx";
 
-const userProfile = () => {
+const UserProfile = () => {
 	const [products, setProducts] = useState({});
 	const userid = localStorage.getItem("userid");
 	useEffect(() => {
@@ -73,4 +73,4 @@ const userProfile = () => {
 	);
 };
 
-export default userProfile;
+export default UserProfile;
