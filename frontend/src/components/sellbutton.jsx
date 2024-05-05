@@ -17,7 +17,7 @@ export const ButtonComponent = () => {
           <span className="pr-2">
             <Plus size={24} />
           </span>
-          SELL
+          POST
         </Button>
       </div>
     </>

@@ -148,7 +148,7 @@ function View() {
                 className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl"
               >
                 <Chat size={32} color="#5AE4A8" weight="bold" />
-                <p>CHAT WITH SELLER</p>
+                <p>CHAT WITH OWNER</p>
               </button>
               <button
                 className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl"
