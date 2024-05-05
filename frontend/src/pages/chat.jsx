@@ -98,9 +98,9 @@ export const Chat = () => {
           <div
             key={index}
             className={`flex ${messageContent.author === userid ? "justify-end" : "justify-start"
-              }`}
+              } items-end mb-2 ${messageContent.author === userid ? 'ml-12' : 'mr-12'}`}
           >
-            <div className={`max-w-[75%] p-2 ${messageContent.author === userid ? 'bg-gray-200 rounded-br-lg rounded-bl-lg rounded-tr-lg' : 'bg-gray-300 rounded-br-lg rounded-bl-lg rounded-tl-lg'} ${messageContent.author === userid ? 'mr-2' : 'ml-2'}`}>
+            <div className={`max-w-[75%] p-2 ${messageContent.author === userid ? 'bg-gray-200 rounded-br-lg rounded-bl-lg rounded-tr-lg' : 'bg-gray-300 rounded-br-lg rounded-bl-lg rounded-tl-lg'}`}>
               <div className="flex gap-3">
                 <div className="w-10 h-10 rounded-full bg-rose-400 p-0.5">
                   <img
