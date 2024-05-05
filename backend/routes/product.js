@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Product = require("../models/product.model");
 
-// GET at product/
+// GET at products/
 // Function to get all products from the database
 const getAllProducts = async (req, res) => {
 	try {
@@ -16,7 +16,7 @@ const getAllProducts = async (req, res) => {
 	}
 };
 
-// POST at product/filteredproducts
+// POST at products/filteredproducts
 // Function to get products based on category
 const getFilteredProducts = async (req, res) => {
 	try {
@@ -42,7 +42,7 @@ const getFilteredProducts = async (req, res) => {
 	}
 };
 
-// POST at product/showMyProducts
+// POST at products/showMyProducts
 // Function to get all products posted by a user
 const getMyProducts = async (req, res) => {
 	try {
@@ -65,7 +65,7 @@ const getMyProducts = async (req, res) => {
 	}
 };
 
-// POST at product/addProduct
+// POST at products/addProduct
 // Function to add a product to the database
 const addProduct = async (req, res) => {
 	try {
@@ -95,7 +95,7 @@ const addProduct = async (req, res) => {
 	}
 };
 
-// POST at product/product
+// POST at products/product
 // Function to get a product by id
 const getProduct = async (req, res) => {
 	try {

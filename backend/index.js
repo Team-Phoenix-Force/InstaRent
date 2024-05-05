@@ -53,4 +53,4 @@ app.post("/showWishlist", async (req, res) => {
 app.use("/messages", messageRoutes);
 app.use("/users", usersRoutes);
 app.use("/wishlist", wishlistRoutes);
-app.use("/product", productRoutes);
+app.use("/products", productRoutes);
