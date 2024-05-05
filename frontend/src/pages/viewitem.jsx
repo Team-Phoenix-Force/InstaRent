@@ -163,7 +163,7 @@ function View() {
 							</button>
 							<div className="text-gray-900 font-bold py-2 mx-4 flex justify-center items-center gap-2">
 								<Phone size={32} weight="bold" />
-								<p>Mobile No. 123456789</p>
+								<p>Mobile No. {product.seller_mobile_number}</p>
 							</div>
 						</div>
 					</div>
