@@ -89,8 +89,8 @@ function View() {
       <Navbar />
       <div className="body h-full bg-[#F2F4F5] mt-20">
         <div className="flex flex-col md:flex-row justify-around h-400">
-          <div className="left-section flex flex-col w-full md:w-2/3 my-16">
-            <div className="img px-24 mx-16 bg-black border h-[30rem] pt-12">
+          <div className="left-section flex flex-col w-full md:w-3/3 my-10">
+            <div className="img px-24 mx-16 bg-black border h-[30rem] pt-0">
               {products && (
                 <img
                   className="w-full h-full object-cover"
@@ -98,8 +98,8 @@ function View() {
                 />
               )}
             </div>
-            <div className="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[55rem] ">
-              <div className="text-4xl text-bold text-gray-900 m-2">
+            <div class="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[55rem] ">
+          <div class="text-4xl text-bold text-gray-900 m-2">
                 Description
               </div>
 
