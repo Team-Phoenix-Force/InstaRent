@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 const wishlistSchema = new Schema(
 	{
-		wish_id: { type: String, required: true },
-		id: { type: String, default: null },
 		userid: { type: String, required: true },
+		wishes: { type: Array, required: true },
 	},
 	{
 		timestamps: true,

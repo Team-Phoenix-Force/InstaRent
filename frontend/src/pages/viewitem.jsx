@@ -8,6 +8,7 @@ import { Badge } from "keep-react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 function View() {
 	const [Itemstatus, setItemStatus] = useState("Available");
 	const [wishStatus, setWishStatus] = useState("ADD TO WISHLIST");
@@ -15,17 +16,20 @@ function View() {
 
 	const { id } = useParams();
 
-	const [products, setProducts] = useState([]);
+	const [product, setProduct] = useState({});
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.post("http://localhost:7000/products", {});
+				const response = await axios.post("http://localhost:7000/products/product", {
+					id,
+				});
 				console.log(response.data);
 
-				if (response.data) {
-					setProducts(response.data[id - 1]);
+				if (response.data.product) {
+					setProduct(response.data.product);
+					setSellerid(response.data.product.userid);
 				} else {
-					console.log("No products found in the response.");
+					console.log("No product found in the response.");
 				}
 			} catch (error) {
 				console.error("Error:", error);
@@ -35,13 +39,13 @@ function View() {
 		fetchData();
 	}, []);
 
-	useEffect(() => {
-		// Now you can safely use products here
-		if (products) {
-			console.log(products);
-			setSellerid(products.userid);
-		}
-	}, [products]);
+	// useEffect(() => {
+	// 	// Now you can safely use product here
+	// 	if (product) {
+	// 		console.log(product);
+	// 		setSellerid(product.userid);
+	// 	}
+	// }, [product]);
 
 	const userid = localStorage.getItem("userid");
 
@@ -91,10 +95,10 @@ function View() {
 				<div className="flex flex-col md:flex-row justify-around h-400">
 					<div className="left-section flex flex-col w-full md:w-2/3 my-10">
 						<div className="img px-24 mx-16 bg-black border h-[30rem] pt-0">
-							{products && (
+							{product && (
 								<img
 									className="w-full h-full object-cover"
-									src={products.product_image_url}
+									src={product.product_image_url}
 								/>
 							)}
 						</div>
@@ -104,14 +108,14 @@ function View() {
 							</div>
 
 							<p className="text-gray-900 m-2 text-sm">
-								{products && <p>{products.description}</p>}
+								{product && <p>{product.description}</p>}
 							</p>
 						</div>
 					</div>
 					<div className="right-section w-full md:w-2/3 flex flex-col my-16 gap-8">
 						<div className="pricecard border border-gray-100 h-48 flex flex-col justify-around p-4 mr-4 bg-white rounded-md">
 							<div className="price font-bold text-8xl">
-								{products && <p>₹{products.price}</p>}
+								{product && <p>Rs.{product.price} / {product.per}  </p>}
 							</div>
 							<div className="w-16 flex gap-4">
 								<Badge size="sm" colorType="light" color="gray">
@@ -128,8 +132,8 @@ function View() {
 
 							<div className="bottom flex justify-between">
 								<p className="city">
-									{products && (
-										<p className="text-xl font-medium">{products.title}</p>
+									{product && (
+										<p className="text-xl font-medium">{product.title}</p>
 									)}
 								</p>
 								<span>
@@ -141,7 +145,7 @@ function View() {
 						</div>
 						<div className="ownerdetail h-50 border border-gray-100 flex flex-col justify-center items-center gap-4 mr-4 bg-white rounded-md mt-3">
 							<p className="text-gray-900 font-bold py-2 mx-4 align-left">
-								{products && <p>{products.userid}</p>}
+								{product && <p>{product.userid}</p>}
 							</p>
 							<button
 								onClick={handleChat}

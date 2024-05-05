@@ -107,9 +107,9 @@ const getProduct = async (req, res) => {
 
 		if (product) {
 			console.log(product);
-			return res.json({ data: product });
+			return res.json({ product });
 		} else {
-			return res.json({ data: [] });
+			return res.json({ message: "No product found", status: false});
 		}
 	} catch (error) {
 		console.error(error);
