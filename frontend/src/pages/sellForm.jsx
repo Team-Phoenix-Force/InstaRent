@@ -12,6 +12,7 @@ import axios from "axios";
 const SellForm = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
+  const [paymentInitiated, setPaymentInitiated] = useState(false);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -144,6 +145,7 @@ console.log(`selected option is ${selectedOption}`);
               alert(response.error.metadata.order_id);
               alert(response.error.metadata.payment_id);
       });
+      setPaymentInitiated(true);
   
       rzp1.open();
       e.preventDefault();
@@ -307,15 +309,16 @@ console.log(`selected option is ${selectedOption}`);
 
         <div className="flex items-center justify-between mt-8">
           <button
-            className="w-1/2 m-2 bg-custom_primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className={`w-1/2 m-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${paymentInitiated ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-custom_primary text-white'}`}
             onClick={paymentHandler}
+            disabled={paymentInitiated} 
           >
             Pay here
           </button>
           <button
-            className="w-1/2 bg-custom_primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
+className={`w-1/2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!paymentInitiated ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-custom_primary text-white'}`}            type="submit" disabled={!paymentInitiated}
           >
+          
             POST NOW
           </button>
         </div>
