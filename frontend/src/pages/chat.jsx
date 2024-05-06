@@ -70,7 +70,7 @@ export const Chat = () => {
           <div
             key={index}
             className={`flex ${messageContent.author === userid ? "justify-end" : "justify-start"
-              }`}
+          } items-end mb-2 ${messageContent.author === userid ? 'ml-12' : 'mr-12'}`}
           >
             <div className={`max-w-[75%] p-2 ${messageContent.author === userid ? 'bg-gray-200 rounded-br-lg rounded-bl-lg rounded-tr-lg' : 'bg-gray-300 rounded-br-lg rounded-bl-lg rounded-tl-lg'} ${messageContent.author === userid ? 'mr-2' : 'ml-2'}`}>
               <div className="flex gap-3">
@@ -107,7 +107,7 @@ export const Chat = () => {
           }}
         />
         <button
-          className="hidden md:inline-block w-12" 
+          className="hidden md:inline-block w-12" // Hide on small screens, show on medium and larger screens
           onClick={sendMessage}
         >
           <PaperPlaneRight size={32} />
