@@ -20,13 +20,15 @@ const SellForm = () => {
   };
   const navigate = useNavigate();
   const [product, setProduct] = useState({
-    title: "",
-    description: "",
-    price: "",
-    address: "",
-    seller_mobile_number: "",
-    product_image_url: "",
-  });
+		title: "",
+		description: "",
+		price: "",
+		per: "day",
+		city: "",
+		seller_mobile_number: "",
+		product_image_url: "",
+	});
+
 
   const handleChange = (e) => {
     setProduct({
@@ -36,57 +38,51 @@ const SellForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const {
-      title,
-      description,
-      price,
-      address,
-      seller_mobile_number,
-      product_image_url,
-    } = product;
-    const userid = localStorage.getItem("userid");
+		e.preventDefault();
+		const {
+			title,
+			description,
+			price,
+			city,
+			seller_mobile_number,
+			product_image_url,
+		} = product;
+		const per = product.per.toLowerCase();
+		console.log("per", per);
+		const userid = localStorage.getItem("userid").toString();
 
-    const response = await axios.post("http://localhost:3000/addProduct", {
-      title,
-      description,
-      price,
-      address,
-      seller_mobile_number,
-      product_image_url,
-      userid,
-    });
+		const response = await axios.post(
+			"http://localhost:3000/products/addProduct",
+			{
+				title,
+				description,
+				price,
+				per,
+				city,
+				seller_mobile_number,
+				product_image_url,
+				userid,
+			}
+		);
 
-    const data = response.data;
-    console.log("1");
+		const data = response.data;
+		console.log("1");
 
-    if (data.status === false) {
-      console.log("2");
-      toast.error(data.message, toastOptions);
-    }
+		if (data.status === false) {
+			console.log("2");
+			// toast.error(data.message, toastOptions);
+		}
 
-    if (data.status === true) {
-      console.log("3");
-      // toast.success(data.message, toastOptions);
-      alert("added to cart");
-      setTimeout(() => navigate("/"), 1000);
-    }
-    console.log("Form submitted:", product);
+		if (data.status === true) {
+			console.log("3");
+			// toast.success(data.message, toastOptions);
+			alert("added to cart");
+			setTimeout(() => navigate("/"), 1000);
+		}
+		console.log("Form submitted:", product);
+		console.log("userid", userid);
+	};
 
-
-
-
-
-
-
-
-   
-   
-    
-    
-
-
-  };
 
   
   const paymentHandler=async (e)=>{
@@ -208,6 +204,21 @@ console.log(`selected option is ${selectedOption}`);
               onChange={handleChange}
             />
           </div>
+          <div className="mb-4">
+						<label
+							className="block text-gray-700 text-sm font-bold mb-2"
+							htmlFor="city"
+						>
+							City
+						</label>
+						<textarea
+							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
+							id="city"
+							name="city"
+							value={product.city}
+							onChange={handleChange}
+						/>
+					</div>
 
           <div className="mb-4">
             <label
@@ -309,18 +320,13 @@ console.log(`selected option is ${selectedOption}`);
 
         <div className="flex items-center justify-between mt-8">
           <button
-        className={`w-1/2 m-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${paymentInitiated ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-custom_primary text-white'}`}
+        className={`w-full m-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${paymentInitiated ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-custom_primary text-white'}`}
             onClick={paymentHandler}
             disabled={paymentInitiated} 
           >
-            Pay here
+            Post after paying
           </button>
-          <button
-className={`w-1/2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!paymentInitiated ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-custom_primary text-white'}`}            type="submit" disabled={!paymentInitiated}
-          >
           
-            POST NOW
-          </button>
         </div>
 
 
