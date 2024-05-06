@@ -17,7 +17,7 @@ const FilteredProducts = () => {
 				console.log("searchedText", searchedText);
         console.log("city", userCity);
 				const response = await axios.post(
-					"http://localhost:7000/products/filteredproducts",
+					"http://localhost:8000/search",
 					{ searchedText, userCity }
 				);
 				console.log(response.data);
