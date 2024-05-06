@@ -323,6 +323,7 @@ console.log(`selected option is ${selectedOption}`);
         className={`w-full m-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${paymentInitiated ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-custom_primary text-white'}`}
             onClick={paymentHandler}
             disabled={paymentInitiated} 
+            type="submit"
           >
             Post after paying
           </button>
