@@ -245,14 +245,12 @@ const Home = () => {
                 className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"
               />
             </div>
-            <div className="text-lg font-semibold my-2">Customer's Name</div>
+            <div className="text-lg font-semibold my-2">Riya Khan</div>
             <div className="stars py-2">
               <RatingComponent />
             </div>
             <p className="italic">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-              expedita laborum, animi pariatur esse obcaecati delectus quam
-              commodi!
+              The Plattform fee is the least among other websites which makes it suitable for new users.
             </p>
           </div>
 
@@ -264,13 +262,12 @@ const Home = () => {
                 className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"
               />
             </div>
-            <div className="text-lg font-semibold my-2">Customer's Name</div>
+            <div className="text-lg font-semibold my-2">Laura Lammi</div>
             <div className="stars py-2">
               <RatingComponent />
             </div>
             <p className="italic">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit at
-              nemo voluptatem. Quae ea earum veritatis dolores quos.
+             The user experience is very smoothing .I havent felt any difficulty in navigating any pages .I loved the UI.
             </p>
           </div>
 
@@ -282,14 +279,12 @@ const Home = () => {
                 className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"
               />
             </div>
-            <div className="text-lg font-semibold my-2">Customer's Name</div>
+            <div className="text-lg font-semibold my-2">Smitha Singhania</div>
             <div className="stars py-2">
               <RatingComponent />
             </div>
             <p className="italic">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-              facere quibusdam incidunt ea? Doloribus illo ducimus doloremque
-              beatae.
+             The best part about this website is the Chat option.I easily commincated with the receiver gave my old mobile phone on rent for a descent price. 
             </p>
           </div>
         </div>

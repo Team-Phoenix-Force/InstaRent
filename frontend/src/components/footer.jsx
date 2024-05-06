@@ -9,8 +9,7 @@ const Footer = () => {
               INSTARENT
             </div>
             <p className="max-w-xs mt-4 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-              accusantium.
+            Your go-to rental destination for everything you need.
             </p>
             <div className="flex mt-8 space-x-6 text-gray-600">
               <a
