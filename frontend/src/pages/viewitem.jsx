@@ -101,8 +101,8 @@ function View() {
 			<Navbar />
 			<div className="body h-full bg-[#F2F4F5] mt-20">
 				<div className="flex flex-col md:flex-row justify-around h-400">
-					<div className="left-section flex flex-col w-full md:w-2/3 my-10">
-						<div className="img px-24 mx-16 bg-black border h-[30rem] pt-0">
+					<div className="left-section flex flex-col w-full md:w-3/3 my-10">
+						<div className="img px-24 mx-10 bg-black border h-[30rem] pt-0">
 							{product && (
 								<img
 									className="w-full h-full object-cover"

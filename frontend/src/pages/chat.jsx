@@ -135,7 +135,7 @@ export const Chat = () => {
           }}
         />
         <button
-          className="hidden md:inline-block w-12" // Hide on small screens, show on medium and larger screens
+          className="hidden md:inline-block w-12"
           onClick={sendMessage}
         >
           <PaperPlaneRight size={32} />
