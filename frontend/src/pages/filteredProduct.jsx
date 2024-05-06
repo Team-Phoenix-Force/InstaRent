@@ -17,7 +17,7 @@ const FilteredProducts = () => {
 				console.log("searchedText", searchedText);
         console.log("city", userCity);
 				const response = await axios.post(
-					"http://localhost:8000/search",
+					"https://26d7-35-187-148-235.ngrok-free.app/search",
 					{ searchedText, userCity }
 				);
 				console.log(response.data);
