@@ -35,7 +35,7 @@ const PopoverContent = () => {
       </div>
       <div className="flex gap-4 hover:outline rounded-md hover:outline-custom_primary hover:outline-2 py-2 text-textcolor font-medium">
         <Chat size={20} fontWeight="bold" />
-        <Link to={`/chatlist/${userid}`}>Chats</Link>
+        <Link to={`/chatlist/`}>Chats</Link>
       </div>
       <div className="flex gap-4 hover:outline rounded-md hover:outline-custom_primary hover:outline-2 py-2 text-textcolor font-medium">
         <Heart size={20} fontWeight="bold" />

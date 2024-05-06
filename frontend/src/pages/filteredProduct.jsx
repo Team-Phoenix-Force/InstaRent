@@ -15,7 +15,7 @@ const FilteredProducts = () => {
 			try {
 				const userCity = localStorage.getItem("city");
 				console.log("searchedText", searchedText);
-        console.log("city", userCity);
+				console.log("city", userCity);
 				const response = await axios.post(
 					"https://26d7-35-187-148-235.ngrok-free.app/search",
 					{ searchedText, userCity }
@@ -43,9 +43,6 @@ const FilteredProducts = () => {
 	return (
 		<div>
 			<Navbar />
-			<div className="categories my-20 bg-slate-100 shadow-md mb-4 ">
-				<DropdownComponent />
-			</div>
 
 			<div className="services-container flex justify-center items-center gap-16 flex-wrap">
 				{products.length > 0 ? (

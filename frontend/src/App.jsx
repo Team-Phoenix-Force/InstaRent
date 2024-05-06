@@ -31,7 +31,7 @@ function App() {
         <Route path="/search/:searchedText" element={<FilteredProducts />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
         <Route path="/chat/:userid/:sellerid" element={<Chat />} />
-        <Route path="/chatlist/:userid" element={<ChatList />} />
+        <Route path="/chatlist" element={<ChatList />} />
       </Routes>
     </BrowserRouter>
   );
