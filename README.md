@@ -14,9 +14,9 @@ InstaRent is a web platform that facilitates renting items, allowing users to bo
 
 
 # Technologies Used
-* Frontend: HTML, CSS, JavaScript, React.js
+* Frontend: React.js
 * Backend: Node.js
-* Database: MySql
+* Database: MongoDB
 * APIs: Integration with Google Maps API for location-based services.
 * Other Tools: Axios for HTTP requests, JSON Web Tokens for authentication, etc.
 
